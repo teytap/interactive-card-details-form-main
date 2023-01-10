@@ -1,0 +1,81 @@
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+}
+main {
+  display: grid;
+  height: 100%;
+  grid-gap: 3px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+}
+.card-images-div {
+  background-image: url("/images/bg-main-desktop.png");
+  background-repeat: no-repeat;
+  background-size: initial;
+  color: white;
+  display: grid;
+  row-gap: 20px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+}
+.card-front-side {
+  background-image: url("/images/bg-card-front.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 10px;
+
+  grid-column: 3 / 12;
+  grid-row: 2/7;
+  display: grid;
+  grid-template-rows: 3fr 2fr 1fr;
+  padding: 30px 50px 30px 30px;
+}
+.card-back-side {
+  background-image: url("/images/bg-card-back.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 10px;
+  margin: 5px;
+  grid-column: 4 / 13;
+  grid-row: 7/12;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding-right: 80px;
+  letter-spacing: 0.1em;
+}
+.name-date-div {
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 0.1em;
+}
+.card-number-div {
+  font-size: 32px;
+  text-align: center;
+  word-spacing: 15px;
+  font-stretch: extra-expanded;
+  letter-spacing: 2px;
+}
+.card-form-div {
+  padding: 30px;
+}
+#thank-you-state {
+  display: none;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
