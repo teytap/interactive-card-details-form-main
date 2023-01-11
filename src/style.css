@@ -65,8 +65,48 @@ main {
   font-stretch: extra-expanded;
   letter-spacing: 2px;
 }
+/*form*/
 .card-form-div {
-  padding: 30px;
+  padding: 140px;
+  color: hsl(278, 68%, 11%);
+}
+input {
+  font-family: "Space Grotesk", sans-serif;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid hsl(270, 3%, 87%);
+  color: hsl(270, 3%, 87%);
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+select {
+  font-family: "Space Grotesk", sans-serif;
+  padding: 8px 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid hsl(270, 3%, 87%);
+  color: hsl(270, 3%, 87%);
+  font-size: 18px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+.date-and-cvc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.date-div {
+  display: grid;
+}
+.date-div > div {
+  display: flex;
+}
+#confirm {
+  background-color: hsl(278, 68%, 11%);
+  color: white;
+  width: 100%;
+  border: 2px solid hsl(278, 68%, 11%);
+  margin: 0px;
 }
 #thank-you-state {
   display: none;
@@ -78,4 +118,15 @@ main {
 .attribution a {
   color: hsl(228, 45%, 44%);
   text-decoration: none;
+}
+
+@media (max-width: 571px) {
+  .card-form-div {
+    padding: 20px;
+  }
+}
+@media (max-width: 820px) {
+  .card-form-div {
+    padding: 60px;
+  }
 }
