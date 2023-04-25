@@ -22,34 +22,43 @@ main {
   background-repeat: no-repeat;
   background-size: initial;
   color: white;
-  display: grid;
-  row-gap: 20px;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
+
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  padding: 40px;
 }
 .card-front-side {
   background-image: url("/images/bg-card-front.png");
   background-repeat: no-repeat;
   background-size: contain;
-  grid-column: 3 / 12;
-  grid-row: 2/7;
-  display: grid;
-  grid-template-rows: 3fr 2fr 1fr;
-  padding: 30px 50px 30px 30px;
+  padding: 20px 40px;
+  height: 200px;
+  width: 370px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: space-around;
 }
+.card-front-side img {
+  width: 60px;
+}
+.card-front-side #left-name {
+  text-transform: uppercase;
+}
+
 .card-back-side {
   background-image: url("/images/bg-card-back.png");
   background-repeat: no-repeat;
   background-size: contain;
-
-  margin: 5px;
-  grid-column: 4 / 13;
-  grid-row: 7/12;
+  padding: 20px 40px;
+  height: 210px;
+  width: 370px;
   display: flex;
   align-items: center;
   justify-content: right;
-  padding-right: 90px;
   letter-spacing: 0.1em;
+  margin-left: auto;
 }
 .name-date-div {
   display: flex;
@@ -57,13 +66,12 @@ main {
   letter-spacing: 0.1em;
 }
 .card-number-div {
-  font-size: 32px;
-  text-align: justify;
-  word-spacing: 15px;
+  font-size: 27px;
+  word-spacing: 10px;
   font-stretch: extra-expanded;
   letter-spacing: 2px;
 }
-/*form*/
+/*---form---*/
 .card-form-div {
   padding: 140px;
   color: hsl(278, 68%, 11%);
@@ -92,15 +100,34 @@ select {
 .date-div > div {
   display: flex;
 }
-#confirm {
+.cvc-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#confirm,
+.continue {
   background-color: hsl(278, 68%, 11%);
   color: white;
   width: 105%;
   border: 2px solid hsl(278, 68%, 11%);
   margin-right: 0px;
 }
+.continue {
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
 #thank-you-state {
   display: none;
+  text-align: center;
+}
+#thank-you-state p {
+  color: grey;
+}
+#thank-you-state {
+  display: none;
+  text-align: center;
 }
 footer {
   position: fixed;
@@ -125,6 +152,8 @@ footer {
   .card-images-div {
     background-image: url("/images/bg-main-mobile.png");
     background-size: contain;
+    display: grid;
+    row-gap: 20px;
     grid-column: auto;
     grid-row: auto;
   }
@@ -132,12 +161,14 @@ footer {
     background-image: url("/images/bg-card-back.png");
     grid-column: 4 / 12;
     grid-row: 4/10;
+    width: 100%;
   }
   .card-front-side {
     background-image: url("/images/bg-card-front.png");
     grid-column: 2 / 10;
     grid-row: 7/13;
     padding: 24px;
+    width: 100%;
   }
   .card-number-div {
     font-size: 22px;

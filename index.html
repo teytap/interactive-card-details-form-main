@@ -31,12 +31,18 @@
           <img src="/images/card-logo.svg" alt="" />
           <div class="card-number-div">0000 0000 0000 0000</div>
           <div class="name-date-div">
-            <div>JANE APPLESEED</div>
+            <div id="left-name">JANE APPLESEED</div>
             <div>00/00</div>
           </div>
         </div>
       </div>
       <div class="card-form-div">
+        <div id="thank-you-state">
+          <img src="/images/icon-complete.svg" alt="" width="60" />
+          <h1>Thank you!</h1>
+          <p>We've added your card details</p>
+          <button class="continue">Continue</button>
+        </div>
         <form>
           <label for="name">CARDHOLDER NAME</label>
           <input type="text" id="name" placeholder="e.g. Jane Appleseed" />
@@ -54,10 +60,26 @@
                 <select name="month" id="month">
                   <option value="">MM</option>
                   <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
                 </select>
                 <select name="year" id="month">
                   <option value="">YY</option>
                   <option value="2023">23</option>
+                  <option value="2024">24</option>
+                  <option value="2025">25</option>
+                  <option value="2026">26</option>
+                  <option value="2027">27</option>
+                  <option value="2028">28</option>
                 </select>
               </div>
             </div>
@@ -74,9 +96,6 @@
 
     <!-- Completed state start -->
 
-    <div id="thank-you-state">
-      Thank you! We've added your card details Continue
-    </div>
     <footer>
       <div class="attribution">
         Challenge by
