@@ -151,7 +151,7 @@ footer {
   }
   .card-images-div {
     background-image: url("/images/bg-main-mobile.png");
-    background-size: contain;
+    background-size: cover;
     display: grid;
     row-gap: 20px;
     grid-column: auto;
@@ -159,16 +159,16 @@ footer {
   }
   .card-back-side {
     background-image: url("/images/bg-card-back.png");
-    grid-column: 4 / 12;
+    /* grid-column: 3 / 11; */
     grid-row: 4/10;
-    width: 100%;
+    margin: 10px;
   }
   .card-front-side {
     background-image: url("/images/bg-card-front.png");
-    grid-column: 2 / 10;
+    /* grid-column: 1 / 9; */
     grid-row: 7/13;
+
     padding: 24px;
-    width: 100%;
   }
   .card-number-div {
     font-size: 22px;
