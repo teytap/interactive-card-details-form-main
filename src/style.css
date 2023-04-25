@@ -9,72 +9,109 @@ body {
 body {
   font-family: "Space Grotesk", sans-serif;
   font-size: 18px;
+  min-height: 100vh;
 }
 main {
-  display: grid;
-  height: 100%;
-  grid-gap: 3px;
+  /* display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
-}
-.card-images-div {
-  background-image: url("/images/bg-main-desktop.png");
-  background-repeat: no-repeat;
-  background-size: initial;
-  color: white;
+  height: 100%;
+  grid-gap: 3px; */
 
   display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-around;
-  padding: 40px;
+  align-items: center;
+}
+.left-div {
+  color: white;
+  min-height: 100vh;
+  width: 40%;
+  background-image: url("/images/bg-main-desktop.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.cards {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  left: 100%;
+  transform: translate(-50%, -50%);
 }
 .card-front-side {
-  background-image: url("/images/bg-card-front.png");
-  background-repeat: no-repeat;
-  background-size: contain;
+  /*
   padding: 20px 40px;
-  height: 200px;
   width: 370px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: space-around;
+  align-items: space-around; */
+  position: relative;
+  transform: translateX(-100px);
 }
-.card-front-side img {
-  width: 60px;
+.logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
 }
+
 .card-front-side #left-name {
   text-transform: uppercase;
 }
 
+.name-date-div {
+  /* display: flex;
+  justify-content: space-between;
+  letter-spacing: 0.1em; */
+  position: absolute;
+  bottom: 2rem;
+  left: 1rem;
+  right: 3rem;
+  display: flex;
+  color: var(--White);
+  justify-content: space-between;
+}
+.card-number-div {
+  /* font-size: 27px;
+  word-spacing: 10px;
+  font-stretch: extra-expanded;
+  letter-spacing: 2px; */
+  position: absolute;
+  color: var(--White);
+  bottom: 5rem;
+  left: 1rem;
+  letter-spacing: 2px;
+}
+
 .card-back-side {
-  background-image: url("/images/bg-card-back.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding: 20px 40px;
+  /* padding: 20px 40px;
   height: 210px;
   width: 370px;
   display: flex;
   align-items: center;
   justify-content: right;
   letter-spacing: 0.1em;
-  margin-left: auto;
+  margin-left: auto;*/
+  position: relative;
 }
-.name-date-div {
-  display: flex;
-  justify-content: space-between;
-  letter-spacing: 0.1em;
-}
-.card-number-div {
-  font-size: 27px;
-  word-spacing: 10px;
-  font-stretch: extra-expanded;
-  letter-spacing: 2px;
+.cvc-container {
+  position: absolute;
+  right: 3.5rem;
+  top: 7rem;
+  color: var(--Light-grayish-violet);
 }
 /*---form---*/
 .card-form-div {
-  padding: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   color: hsl(278, 68%, 11%);
+}
+form {
+  width: 350px;
 }
 input,
 select {
@@ -112,6 +149,19 @@ select {
   width: 105%;
   border: 2px solid hsl(278, 68%, 11%);
   margin-right: 0px;
+  cursor: pointer;
+}
+/* ---errors--- */
+.error {
+  border: 2px solid red;
+}
+.error-message {
+  gap: 0;
+}
+.error-message::after {
+  content: "Valid Entry Required";
+  color: red;
+  margin-top: 0.2rem;
 }
 .continue {
   padding: 10px 20px;
@@ -147,28 +197,40 @@ footer {
 
 @media (max-width: 860px) {
   main {
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); */
+    flex-direction: column;
   }
-  .card-images-div {
-    background-image: url("/images/bg-main-mobile.png");
-    background-size: cover;
-    display: grid;
-    row-gap: 20px;
-    grid-column: auto;
-    grid-row: auto;
-  }
+  .card-front-side .card img,
+  .card-front-side,
+  .card-back-side img,
   .card-back-side {
-    background-image: url("/images/bg-card-back.png");
-    /* grid-column: 3 / 11; */
-    grid-row: 4/10;
-    margin: 10px;
+    width: 280px;
+  }
+  .cards {
+    flex-direction: column-reverse;
+    left: 61%;
+    top: 60%;
+    gap: 0;
+  }
+  .left-div {
+    background-image: url("/images/bg-main-mobile.png");
+    width: 100%;
+    min-height: 30vh;
+  }
+
+  .card-back-side {
+    /* background-image: url("/images/bg-card-back.png");
+    grid-column: 3 / 11;
+    grid-row: 4/10; */
+    /* margin: 10px; */
+    transform: translateY(70px);
   }
   .card-front-side {
-    background-image: url("/images/bg-card-front.png");
-    /* grid-column: 1 / 9; */
+    /* background-image: url("/images/bg-card-front.png");
+    grid-column: 1 / 9;
     grid-row: 7/13;
-
-    padding: 24px;
+    padding: 24px; */
+    z-index: 100;
   }
   .card-number-div {
     font-size: 22px;
@@ -180,31 +242,25 @@ footer {
   }
   /*form*/
   .card-form-div {
-    grid-column: auto;
-    grid-row: auto;
-    padding: 40px;
-    max-height: 700px;
+    margin-top: 110px;
   }
 }
 @media (max-width: 1200px) {
-  .card-front-side {
-    grid-template-rows: 3fr 2fr 2fr;
-    padding: 30px;
-  }
-  .name-date-div {
-    display: flex;
-    justify-content: space-between;
-    letter-spacing: 0.1em;
-    font-size: 16px;
-  }
-  .card-number-div {
-    font-size: 24px;
-    text-align: center;
-    word-spacing: 10px;
-    font-stretch: expanded;
-  }
+  .card-front-side .card img,
+  .card-front-side,
+  .card-back-side img,
   .card-back-side {
-    padding-bottom: 50px;
-    padding-right: 60px;
+    width: 300px;
+  }
+  .logo {
+    width: 50px;
+  }
+
+  .card-number-div {
+    font-size: 1.1em;
+  }
+  .cvc-container {
+    top: 42%;
+    right: 12%;
   }
 }
