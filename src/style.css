@@ -1,6 +1,8 @@
+* {
+  box-sizing: border-box;
+}
 html,
 body {
-  box-sizing: border-box;
   height: 100%;
   padding: 0;
   margin: 0;
@@ -83,6 +85,7 @@ main {
   bottom: 5rem;
   left: 1rem;
   letter-spacing: 2px;
+  font-size: 2vw;
 }
 
 .card-back-side {
@@ -146,7 +149,7 @@ select {
 .continue {
   background-color: hsl(278, 68%, 11%);
   color: white;
-  width: 105%;
+  width: 100%;
   border: 2px solid hsl(278, 68%, 11%);
   margin-right: 0px;
   cursor: pointer;
@@ -163,6 +166,8 @@ select {
   color: red;
   margin-top: 0.2rem;
 }
+
+/* ---thank you--- */
 .continue {
   padding: 10px 20px;
   border-radius: 6px;
@@ -204,13 +209,14 @@ footer {
   .card-front-side,
   .card-back-side img,
   .card-back-side {
-    width: 280px;
+    max-width: 270px;
   }
   .cards {
     flex-direction: column-reverse;
     left: 61%;
     top: 60%;
     gap: 0;
+    padding: 10px;
   }
   .left-div {
     background-image: url("/images/bg-main-mobile.png");
@@ -231,18 +237,23 @@ footer {
     grid-row: 7/13;
     padding: 24px; */
     z-index: 100;
+    transform: translateX(-80px);
   }
   .card-number-div {
     font-size: 22px;
     word-spacing: 6px;
     letter-spacing: 1px;
+    bottom: 3rem;
   }
+
   .name-date-div {
     font-size: 16px;
+    bottom: 1.2rem;
   }
   /*form*/
   .card-form-div {
     margin-top: 110px;
+    padding: 20px;
   }
 }
 @media (max-width: 1200px) {

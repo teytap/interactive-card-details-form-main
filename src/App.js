@@ -37,6 +37,7 @@ confirmEl.addEventListener("click", (e) => {
     );
   }
 });
+
 continueEl.addEventListener("click", () => {
   thankYou.style.display = "none";
   form.style.display = "block";
